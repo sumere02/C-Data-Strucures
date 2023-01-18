@@ -1,0 +1,5 @@
+the weighted path length of a leaf to be its weight times its depth.
+
+The least occurred characters inserted deeper in the tree compared to more occurred characters 
+also tree is the binary tree with minimum external path weight, the one with the minimum sum of weighted path lengths for the given set of leaves. 
+So the goal is to build a tree with the minimum external path weight.

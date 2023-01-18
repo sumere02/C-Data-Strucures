@@ -1,0 +1,123 @@
+==5249== Memcheck, a memory error detector
+==5249== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==5249== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==5249== Command: ./main
+==5249== Parent PID: 5184
+==5249== 
+--5249-- 
+--5249-- Valgrind options:
+--5249--    --leak-check=full
+--5249--    --show-leak-kinds=all
+--5249--    --track-origins=yes
+--5249--    --verbose
+--5249--    --log-file=valgrind-out.txt
+--5249-- Contents of /proc/version:
+--5249--   Linux version 5.10.16.3-microsoft-standard-WSL2 (oe-user@oe-host) (x86_64-msft-linux-gcc (GCC) 9.3.0, GNU ld (GNU Binutils) 2.34.0.20200220) #1 SMP Fri Apr 2 22:23:49 UTC 2021
+--5249-- 
+--5249-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--5249-- Page sizes: currently 4096, max supported 4096
+--5249-- Valgrind library directory: /usr/lib/valgrind
+--5249-- Reading syms from /home/ubuntu/hostvolume/Final/bin/main
+--5249-- Reading syms from /lib/x86_64-linux-gnu/ld-2.27.so
+--5249--   Considering /lib/x86_64-linux-gnu/ld-2.27.so ..
+--5249--   .. CRC mismatch (computed 2977d8b2 wanted c64f09ed)
+--5249--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.27.so ..
+--5249--   .. CRC is valid
+--5249-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--5249--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--5249--   .. CRC mismatch (computed 41ddb025 wanted 9972f546)
+--5249--    object doesn't have a symbol table
+--5249--    object doesn't have a dynamic symbol table
+--5249-- Scheduler: using generic scheduler lock implementation.
+--5249-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==5249== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-5249-by-test-on-???
+==5249== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-5249-by-test-on-???
+==5249== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-5249-by-test-on-???
+==5249== 
+==5249== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==5249== don't want to do, unless you know exactly what you're doing,
+==5249== or are doing some strange experiment):
+==5249==   /usr/lib/valgrind/../../bin/vgdb --pid=5249 ...command...
+==5249== 
+==5249== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==5249==   /path/to/gdb ./main
+==5249== and then give GDB the following command
+==5249==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=5249
+==5249== --pid is optional if only one valgrind process is running
+==5249== 
+--5249-- REDIR: 0x4020d20 (ld-linux-x86-64.so.2:strlen) redirected to 0x580608c1 (???)
+--5249-- REDIR: 0x4020b00 (ld-linux-x86-64.so.2:index) redirected to 0x580608db (???)
+--5249-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--5249--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--5249--   .. CRC mismatch (computed 50df1b30 wanted 4800a4cf)
+--5249--    object doesn't have a symbol table
+--5249-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--5249--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--5249--   .. CRC mismatch (computed f893b962 wanted 95ee359e)
+--5249--    object doesn't have a symbol table
+==5249== WARNING: new redirection conflicts with existing -- ignoring it
+--5249--     old: 0x04020d20 (strlen              ) R-> (0000.0) 0x580608c1 ???
+--5249--     new: 0x04020d20 (strlen              ) R-> (2007.0) 0x04c34db0 strlen
+--5249-- REDIR: 0x401d540 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c35ee0 (strcmp)
+--5249-- REDIR: 0x4021260 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c394f0 (mempcpy)
+--5249-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+--5249--    object doesn't have a symbol table
+--5249-- Reading syms from /lib/x86_64-linux-gnu/libgcc_s.so.1
+--5249--    object doesn't have a symbol table
+--5249-- Reading syms from /lib/x86_64-linux-gnu/libc-2.27.so
+--5249--   Considering /lib/x86_64-linux-gnu/libc-2.27.so ..
+--5249--   .. CRC mismatch (computed f250d419 wanted 4aacab51)
+--5249--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.27.so ..
+--5249--   .. CRC is valid
+--5249-- Reading syms from /lib/x86_64-linux-gnu/libm-2.27.so
+--5249--   Considering /lib/x86_64-linux-gnu/libm-2.27.so ..
+--5249--   .. CRC mismatch (computed 4e7cf542 wanted 8d27f134)
+--5249--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.27.so ..
+--5249--   .. CRC is valid
+--5249-- REDIR: 0x547da50 (libc.so.6:memmove) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547cd60 (libc.so.6:strncpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547dd30 (libc.so.6:strcasecmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547c7b0 (libc.so.6:strcat) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547cd90 (libc.so.6:rindex) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547f480 (libc.so.6:rawmemchr) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547dbc0 (libc.so.6:mempcpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547d9f0 (libc.so.6:bcmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547cd20 (libc.so.6:strncmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547c820 (libc.so.6:strcmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547db20 (libc.so.6:memset) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x549adb0 (libc.so.6:wcschr) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547ccc0 (libc.so.6:strnlen) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547c890 (libc.so.6:strcspn) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547dd80 (libc.so.6:strncasecmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547c860 (libc.so.6:strcpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547dec0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547cdc0 (libc.so.6:strpbrk) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547c7e0 (libc.so.6:index) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547cc90 (libc.so.6:strlen) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x5487380 (libc.so.6:memrchr) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547ddd0 (libc.so.6:strcasecmp_l) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547d9c0 (libc.so.6:memchr) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x549bb70 (libc.so.6:wcslen) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547d070 (libc.so.6:strspn) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547dd00 (libc.so.6:stpncpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547dcd0 (libc.so.6:stpcpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547f4b0 (libc.so.6:strchrnul) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x547de20 (libc.so.6:strncasecmp_l) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--5249-- REDIR: 0x556d280 (libc.so.6:__strrchr_avx2) redirected to 0x4c34730 (rindex)
+--5249-- REDIR: 0x5476020 (libc.so.6:malloc) redirected to 0x4c31aa0 (malloc)
+--5249-- REDIR: 0x556d450 (libc.so.6:__strlen_avx2) redirected to 0x4c34cf0 (strlen)
+--5249-- REDIR: 0x5569a60 (libc.so.6:__memcmp_avx2_movbe) redirected to 0x4c37e00 (bcmp)
+--5249-- REDIR: 0x5488b30 (libc.so.6:__strcmp_sse2_unaligned) redirected to 0x4c35da0 (strcmp)
+--5249-- REDIR: 0x4ed1280 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x4c32110 (operator new(unsigned long))
+--5249-- REDIR: 0x4ecf390 (libstdc++.so.6:operator delete(void*)) redirected to 0x4c331d0 (operator delete(void*))
+--5249-- REDIR: 0x556d970 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4c39130 (mempcpy)
+--5249-- REDIR: 0x5476910 (libc.so.6:free) redirected to 0x4c32cd0 (free)
+==5249== 
+==5249== HEAP SUMMARY:
+==5249==     in use at exit: 0 bytes in 0 blocks
+==5249==   total heap usage: 43 allocs, 43 frees, 75,752 bytes allocated
+==5249== 
+==5249== All heap blocks were freed -- no leaks are possible
+==5249== 
+==5249== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==5249== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
